@@ -1,0 +1,33 @@
+<!-- sections/index.liquid -->
+<section style="background-color: #f3eddf; font-family: sans-serif; padding: 2rem;">
+  <header style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background-color: #fff; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #e0e0e0;">
+    <img src="{{ 'hth-logo.png' | asset_url }}" alt="HTH WEAR" style="height: 40px;">
+    <nav>
+      <a href="/" style="margin-right: 1rem;">Ana Sayfa</a>
+      <a href="/collections/all">Ürünler</a>
+    </nav>
+  </header>
+
+  <div style="text-align: center; margin-top: 4rem;">
+    <h1 style="font-size: 2rem; font-weight: bold;">Stil Senin, Seçim Senin</h1>
+    <p style="margin: 1rem 0;">Minimal tarzın zirvesine HTH WEAR ile çık</p>
+    <a href="/collections/all" style="background-color: #000; color: #fff; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none;">Alışverişe Başla</a>
+  </div>
+
+  <div style="margin-top: 4rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2rem;">
+    {% for product in collections.frontpage.products %}
+      <div style="background-color: #fff; padding: 1rem; border-radius: 8px; text-align: center;">
+        <a href="{{ product.url }}">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" style="width: 100%; height: auto; border-radius: 6px;">
+          <h3 style="margin-top: 0.5rem;">{{ product.title }}</h3>
+          <p>{{ product.price | money }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+  <footer style="margin-top: 4rem; text-align: center; padding: 2rem 1rem; font-size: 0.85rem; color: #444;">
+    © {{ 'now' | date: '%Y' }} HTH WEAR - Tüm Hakları Saklıdır. |
+    <a href="/policies/privacy-policy" style="text-decoration: underline;">Gizlilik</a>
+  </footer>
+</section>

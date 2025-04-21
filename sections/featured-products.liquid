@@ -1,0 +1,19 @@
+<section class="hero">
+  <h2>Stil Senin, Seçim Senin</h2>
+  <p>Minimal tarzın zirvesine HTH WEAR ile çık</p>
+  <a href="/collections/all" class="btn">Alışverişe Başla</a>
+</section>
+
+<section class="products">
+  {% for product in collections.frontpage.products %}
+    <div class="product-card">
+      <a href="{{ product.url }}">
+        <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.price | money }}</p>
+      </a>
+    </div>
+  {% else %}
+    <p>Henüz ürün eklenmedi.</p>
+  {% endfor %}
+</section>

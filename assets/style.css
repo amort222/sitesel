@@ -1,0 +1,16 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f4f0e8;
+  color: #111;
+}
+.logo {
+  max-width: 200px;
+  margin-top: 40px;
+}
+.hero {
+  padding: 60px 20px;
+}
